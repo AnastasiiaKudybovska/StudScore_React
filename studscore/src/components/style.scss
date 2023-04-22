@@ -1,0 +1,95 @@
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+@mixin logo-text{
+    color: $light-color;
+    font-size: 7rem;
+    text-shadow: 3px 2px 0 $dark-color;
+    font-family: $logo-font
+}
+  
+@mixin ordinary-text{
+    font-family: $font-stack;
+    font-size: 1.3rem;;
+    color: $dark-color;
+    font-weight: lighter;
+} 
+
+@mixin title-text{
+    font-family: $font-stack;
+    font-size: 1.3rem;;
+    padding: 0.35rem $base-padding;
+    color: $light-color;
+}
+
+.logo-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .logo-text{
+      @include logo-text();
+      font-size: 3.5rem;
+      @media screen and (max-width: 620px) {
+        padding-top: 1rem;
+      }
+      @media screen and (max-width: 415px) {
+        font-size: 2.5rem;
+      }
+      @media screen and (max-width: 370px) {
+        font-size: 2rem;
+      }
+      &:hover{
+        transition: 3s;
+        color: $primary-color;
+      }
+    }
+}
+  
+.rating-mark-block{
+    padding: 0.35rem $base-padding;
+    margin: 0 1rem;
+    font-weight: bold;
+    font-family: $font-stack;
+    background-color: $primary-color;
+    border-radius: $base-border-radius;
+    border: none;
+    font-size: 1.1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 20px;
+    transition: box-shadow 0.3s;
+    color: $dark-color;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    @media screen and (max-width: 620px) {
+      font-size: 0.95rem;
+    }
+    .fa{
+      padding-left: 0.3rem;      
+    } 
+  }
+
+.low-rating{
+    background-color: $primary-color;
+}
+
+.fa-star{
+   position: relative;
+   color: $accent-color;
+    stroke: $dark-color;
+    stroke-width: 25px;
+   // -webkit-text-stroke-color: $light-color;
+    @media screen and (max-width: 415px) {
+      font-size: 0.95rem;
+   }
+}
+    .fa-gem{
+      color: $accent-color2;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $dark-color;
+    }

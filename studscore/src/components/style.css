@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Dancing+Script&family=Kalam:wght@300&family=Lora&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-cont .logo-text {
+  color: #F0F6F6;
+  font-size: 7rem;
+  text-shadow: 3px 2px 0 #253237;
+  font-family: "Amatic SC", cursive;
+  font-size: 3.5rem;
+}
+@media screen and (max-width: 620px) {
+  .logo-cont .logo-text {
+    padding-top: 1rem;
+  }
+}
+@media screen and (max-width: 415px) {
+  .logo-cont .logo-text {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 370px) {
+  .logo-cont .logo-text {
+    font-size: 2rem;
+  }
+}
+.logo-cont .logo-text:hover {
+  transition: 3s;
+  color: #BBE6E4;
+}
+
+.rating-mark-block {
+  padding: 0.35rem 0.75rem;
+  margin: 0 1rem;
+  font-weight: bold;
+  font-family: "Lora", serif;
+  background-color: #BBE6E4;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 20px;
+  transition: box-shadow 0.3s;
+  color: #253237;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 620px) {
+  .rating-mark-block {
+    font-size: 0.95rem;
+  }
+}
+.rating-mark-block .fa {
+  padding-left: 0.3rem;
+}
+
+.low-rating {
+  background-color: #BBE6E4;
+}
+
+.fa-star {
+  position: relative;
+  color: #b7094c;
+  stroke: #253237;
+  stroke-width: 25px;
+}
+@media screen and (max-width: 415px) {
+  .fa-star {
+    font-size: 0.95rem;
+  }
+}
+
+.fa-gem {
+  color: #42BFDD;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #253237;
+}/*# sourceMappingURL=style.css.map */
