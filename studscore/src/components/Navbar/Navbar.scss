@@ -97,14 +97,13 @@
 }
 .menu {
   hr {
-    width:85%;
+    width:87%;
     margin: 2rem 5% 0;
-    opacity: 0.3;
-
+    opacity: 0.25;
+    color: $light-color;
+  
   }
 }
-
-
   .custom-navb{
     z-index: 100;
     width: 40vh;
@@ -126,18 +125,17 @@
         transition: 3s;
       }
       .fa{
-       // padding: 0.2rem 1rem;
-       padding: 0.5rem 1rem 0.2rem 0;
+        padding: 0.2rem 1rem;
+       //padding: 0.5rem 1rem 0.2rem 0;
        font-size: 1.1rem;
-       
       }
       p{
-        padding-top: 0.3rem;
+        margin-bottom: 0;
       }
          
     }
     ul{
-      padding-left: 1rem !important;
+      padding-left: 0.5rem !important;
     }
     max-height: 0;
     transition: max-height .5s ease-out;
@@ -150,5 +148,6 @@
       font-size: 0.95rem;;
     }
   }
+  
   
 

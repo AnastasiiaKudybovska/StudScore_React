@@ -1,0 +1,13 @@
+@import '../variables';
+
+.mainStatWrapper{
+    background-color: $light-color;
+    min-width: 270px;
+    padding: 5rem $base-padding;
+    @media screen and (max-width: 620px) {
+      padding: 10rem $base-padding;
+    }
+}
+
+
+
