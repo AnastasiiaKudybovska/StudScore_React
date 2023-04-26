@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Dancing+Script&family=Kalam:wght@300&family=Lora&display=swap");
+.mainStatWrapper {
+  background-color: #F0F6F6;
+  min-width: 270px;
+  padding: 5rem 0.75rem;
+}
+@media screen and (max-width: 620px) {
+  .mainStatWrapper {
+    padding: 10rem 0.75rem;
+  }
+}/*# sourceMappingURL=MainStat.css.map */

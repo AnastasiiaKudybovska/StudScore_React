@@ -3,10 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { useState } from "react";
 import './Navbar.scss';
 
-import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faLineChart, faUser, faPhone, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-
+import { AiFillStar } from 'react-icons/ai';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -25,7 +24,9 @@ const Navbar = () => {
         <h2 className="username-block">
           <p id="firstlastname">Кудибовська Анастасія</p>
           <div className="rating-mark-block">
-            <p id="rating-mark">92.975</p> <FontAwesomeIcon icon={faStar} className="fa fa-star" aria-hidden="true"  />
+            <p id="rating-mark">92.975</p> 
+            <AiFillStar className="fa fa-star"/>
+            {/* <FontAwesomeIcon icon={faStar} className="fa fa-star" aria-hidden="true"  /> */}
           </div>
         </h2>
         </div>
@@ -61,39 +62,7 @@ const Navbar = () => {
     </nav>
     
     </div>
-    // <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    //   <Link className="navbar-brand" to="/">StudScore</Link>
-    //   <button
-    //     className="navbar-toggler"
-    //     type="button"
-    //     data-toggle="collapse"
-    //     data-target="#navbarNav"
-    //     aria-controls="navbarNav"
-    //     aria-expanded="false"
-    //     aria-label="Toggle navigation"
-    //   >
-    //     <span className="navbar-toggler-icon"></span>
-    //   </button>
-    //   <div className="collapse navbar-collapse" id="navbarNav">
-    //     <ul className="navbar-nav">
-    //       <li className="nav-item">
-    //         <NavLink className="nav-link" activeClassName="active" exact to="/">
-    //           Home
-    //         </NavLink>
-    //       </li>
-    //       <li className="nav-item">
-    //         <NavLink className="nav-link" activeClassName="active" to="/about">
-    //           About
-    //         </NavLink>
-    //       </li>
-    //       <li className="nav-item">
-    //         <NavLink className="nav-link" activeClassName="active" to="/contact">
-    //           Contact
-    //         </NavLink>
-    //       </li>
-    //     </ul>
-    //   </div>
-    // </nav>
+
   );
 };
 

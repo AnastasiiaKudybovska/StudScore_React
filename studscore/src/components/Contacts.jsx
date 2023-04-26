@@ -1,10 +1,14 @@
 import React from 'react';
+import ContactsCard from './ContactsCard';
 
 const Contacts = () => {
   return (
-    <div>
-      <h1>Contacts</h1>
-      <p>Learn more about us!</p>
+    <div className="contacts-cont">
+      <div className="my-5">
+        <h2>Контакти</h2>
+        <hr/>
+      </div>
+      <ContactsCard/>
     </div>
   );
 };
