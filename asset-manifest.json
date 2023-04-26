@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/StudScore_React/static/css/main.1656e0c2.css",
+    "main.js": "/StudScore_React/static/js/main.76c1ed22.js",
+    "static/media/1.jpg": "/StudScore_React/static/media/1.29da02984556aaa1b416.jpg",
+    "static/media/5.jpg": "/StudScore_React/static/media/5.21d25d4648f52cd0b43a.jpg",
+    "static/media/6.jpg": "/StudScore_React/static/media/6.8031b655307d283d662e.jpg",
+    "index.html": "/StudScore_React/index.html",
+    "main.1656e0c2.css.map": "/StudScore_React/static/css/main.1656e0c2.css.map",
+    "main.76c1ed22.js.map": "/StudScore_React/static/js/main.76c1ed22.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1656e0c2.css",
+    "static/js/main.76c1ed22.js"
+  ]
+}
