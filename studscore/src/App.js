@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      {(pathname === 'StudScore/statistics' || pathname === 'StudScore/profile' || pathname ==='StudScore/contacts') ? <Navbar/> : null}
+      {(pathname === '/StudScore/statistics' || pathname === '/StudScore/profile' || pathname ==='/StudScore/contacts') ? <Navbar/> : null}
         <Routes>
           <Route path="StudScore/" element={<LoginForm setToken={setToken} />} />
           <Route path="StudScore/statistics" element={<Statistics/>} />
