@@ -12,17 +12,17 @@ import Footer from './components/Footer';
 
 function App() {
   const [token, setToken] = useState();
-  const location = useLocation(); // Доданий хук useHistory()
-  const {pathname} = location; // Отримання поточного шляху з хука useHistory()
+  const location = useLocation(); 
+  const {pathname} = location; 
 
   return (
     <div className="App">
-      {(pathname === '/statistics' || pathname === '/profile' || pathname ==='/contacts') ? <Navbar/> : null}
+      {(pathname === 'StudScore/statistics' || pathname === 'StudScore/profile' || pathname ==='StudScore/contacts') ? <Navbar/> : null}
         <Routes>
-          <Route path="/" element={<LoginForm setToken={setToken} />} />
-          <Route path="/statistics" element={<Statistics/>} />
-          <Route path="/profile" element={<Profile/>} />
-          <Route path="/contacts" element={<Contacts/>} />
+          <Route path="StudScore/" element={<LoginForm setToken={setToken} />} />
+          <Route path="StudScore/statistics" element={<Statistics/>} />
+          <Route path="StudScore/profile" element={<Profile/>} />
+          <Route path="StudScore/contacts" element={<Contacts/>} />
         </Routes>
         {(pathname === '/statistics' || pathname === '/profile' || pathname ==='/contacts') ? <Footer/> : null}
     </div>
