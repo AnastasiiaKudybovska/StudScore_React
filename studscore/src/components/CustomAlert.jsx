@@ -22,7 +22,7 @@ const AlertWrapper = styled.div`
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
     rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  background-color: ${(props) => (props.success ? '#2EE59D' : '#b7094c')};
+  background-color: ${(props) => (props.success ? '#23b86b' : '#b7094c')}; //#23b86b 23b87d
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   animation: ${showAlertAnimation} 0.2s ease-in-out forwards;

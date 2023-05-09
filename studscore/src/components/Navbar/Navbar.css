@@ -116,7 +116,7 @@
   width: 100%;
 }
 
-.main-stat-subcont, .stat-chart .stat-chart-subcont, .main-stat-wrap .main-stat-rat-subcont {
+.main-stat-subcont, .stat-chart .stat-chart-subcont, .stat-chart .chart-main-flex-cont .stat-chart-subcont, .main-stat-wrap .main-stat-rat-subcont {
   width: 85%;
   padding: 0.75rem;
   margin: 0.75rem;
@@ -124,7 +124,7 @@
   border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   text-align: center;
-  animation: fadeIn 3s;
+  animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
@@ -572,6 +572,49 @@ body {
   text-align: start;
   padding: 9rem 0 4rem 0;
 }
+@media screen and (max-width: 650px) {
+  .stat-chart {
+    padding: 11rem 0 4rem 0;
+  }
+}
+.stat-chart .chart-main-flex-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.stat-chart .chart-main-flex-cont .stat-chart-subcont {
+  animation: fadeIn 3s;
+  width: 65%;
+}
+@media screen and (max-width: 650px) {
+  .stat-chart .chart-main-flex-cont .stat-chart-subcont {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .stat-chart .chart-main-flex-cont .stat-chart-subcont {
+    width: 90%;
+  }
+}
+.stat-chart .chart-main-flex-cont .stat-chart-subcont .myChart {
+  margin: 2rem 3rem 1rem 3rem;
+}
+@media screen and (max-width: 650px) {
+  .stat-chart .chart-main-flex-cont .stat-chart-subcont .myChart {
+    margin: 1rem;
+  }
+}
+.stat-chart .chart-main-flex-cont .stat-chart-subcont .stat-chart-mark {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@media screen and (max-width: 650px) {
+  .stat-chart .chart-main-flex-cont .stat-chart-subcont .stat-chart-mark {
+    align-self: center;
+  }
+}
 .stat-chart .stat-chart-subcont {
   animation: fadeIn 3s;
   width: 65%;
@@ -598,11 +641,11 @@ body {
     flex-direction: column !important;
   }
 }
-.stat-chart .stat-chart-subcont #myChart {
-  margin: 2rem 3rem;
+.stat-chart .stat-chart-subcont .myChart {
+  margin: 2rem 3rem 1rem 3rem;
 }
 @media screen and (max-width: 650px) {
-  .stat-chart .stat-chart-subcont #myChart {
+  .stat-chart .stat-chart-subcont .myChart {
     margin: 1rem;
   }
 }
@@ -832,6 +875,10 @@ body {
   font-family: "Amatic SC", cursive;
 }
 
+.invalid {
+  background-color: #b7094c !important;
+}
+
 .profile-cont {
   background-color: #F0F6F6;
   padding: 5rem 10rem;
@@ -859,7 +906,7 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  animation: fadeIn 3s;
+  animation: fadeIn 1s;
   padding: 2rem !important;
 }
 .profile-cont .bg-secondary-soft .h4-place {
@@ -878,6 +925,7 @@ body {
   font-weight: lighter;
   font-size: 1.1rem;
   padding: 0.15rem 0.75rem;
+  animation: fadeIn 0.5s ease-in;
 }
 .profile-cont .bg-secondary-soft input {
   background-color: #5C6B73;
@@ -891,6 +939,7 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s;
   color: #F0F6F6;
+  animation: fadeIn 0.5s ease-in;
 }
 .profile-cont .bg-secondary-soft input:focus {
   transition: 1s;
@@ -927,7 +976,6 @@ body {
   transition: box-shadow 0.3s;
   color: #F0F6F6;
   border-radius: 20px;
-  margin-top: 1rem;
   transition: opacity 1s ease;
 }
 .profile-cont .bg-secondary-soft .btn:before {
@@ -973,17 +1021,33 @@ body {
     padding-left: 1rem;
   }
 }
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.profile-cont .ch-pass {
+  animation: fadeIn2 1.6s ease-in !important;
+}
 .profile-cont .button-update {
   flex-direction: column;
   text-align: end;
   justify-content: flex-end;
   align-items: end;
+  animation: fadeIn 0.5s ease-in;
 }
 .profile-cont #changePassBtn {
   margin-top: 0;
+  animation: fadeIn2 1.6s ease-in !important;
 }
 
-#error_changepass_text {
+.error_changeprofile_text {
   text-align: end;
   font-family: "Lora", serif;
   font-size: 1.3rem;
@@ -993,8 +1057,20 @@ body {
   padding: 0.15rem 0.75rem;
   color: #b7094c;
 }
-#error_changepass_text .ch_pass_ok {
+.error_changeprofile_text .ch_pass_ok {
   color: #253237;
+}
+
+p {
+  margin-bottom: 0.3em;
+}
+p.show {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+p.hide {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 }
 
 .px-4 {
@@ -1318,6 +1394,7 @@ body {
   align-items: center;
   font-weight: lighter;
   align-content: center;
+  animation: fadeIn 3s;
 }
 @media screen and (min-width: 415px) and (max-width: 620px) {
   .username-block {
@@ -1336,6 +1413,17 @@ body {
 }
 .username-block p {
   margin-bottom: 0;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .menu hr {
