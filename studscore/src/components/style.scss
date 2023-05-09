@@ -604,12 +604,32 @@ body{
     .myChart-in-flex-box1{
       width: 60%;
       height: 250%;
+      @media screen and (max-width:997px){
+        width: 100%;
+      }
+    }
+    .myChart-in-flex-box2-pie{
+      @media screen and (max-width:730px){
+        width: 50% !important;
+        padding-top: 1rem;
+      }
+      @media screen and (max-width:300px){
+        width: 100% !important;
+      }
     }
     .myChart-in-flex-box2{
       width: 35%;
       @include ordinary-text();
-      font-size: 1rem;
+      font-size: 1.1rem;
       text-align: left;
+      @media screen and (max-width:997px){
+        width: 100%;
+        padding-left: 1rem;;
+      }
+      @media screen and (max-width:470px){
+        font-size: 0.95rem;
+      }
+      
       .my-legend-2{
         display: flex;
         flex-direction: column;
@@ -623,8 +643,44 @@ body{
           }
         }
       }
+      .my-legend-3{
+        font-size: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @media screen and (max-width:400px){
+          font-size: 0.95rem;
+        }
+
+        .legend-2-line{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          p{
+            padding-left: $base-padding;
+          }
+        }
+      }
       
     }
+    .myChart-in-flex-box3
+    {
+      width: 30%;
+      @media screen and (max-width:870px){
+        width: 55%;
+      }
+      @media screen and (max-width:400px){
+        width: 60%;
+      }
+     
+    }
+   .chart-flex-cont-pie{
+    @media screen and (max-width:730px){
+      flex-direction: column !important;
+    }
+
+
+  }
     .chart-flex-cont{
       justify-content: space-around;
       flex-wrap: wrap;
@@ -633,6 +689,9 @@ body{
       flex-direction: row;
       margin: 1rem;
       padding-top: 1rem;
+      @media screen and (max-width:997px){
+        flex-direction: column ;
+      }
     }
     .stat-chart-mark{
       display: flex;

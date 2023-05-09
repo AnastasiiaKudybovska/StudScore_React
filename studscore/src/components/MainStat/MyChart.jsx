@@ -8,15 +8,18 @@ import AxiosClient from "../AxiosClient";
 import CustomAlert from "../CustomAlert";
 import styled from 'styled-components';
 
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+Chart.register(ChartDataLabels);
 const DotCont= styled.div`
-  min-height: 15px;
-  min-width: 16px;
+  min-height:  ${(props) => (props.size)}px;
+  min-width:  ${(props) => (props.size + 1)}px;
   background-color: red;
   border-radius: 50%;
   display: inline-block;
   background-color: ${(props) => (props.color)}
 `;
 // background-color: //${(props) => (props.success ? '#23b86b' : '#b7094c')};
+
 
 const MyChart = (props) => {
   const user = props.user ? props.user : null;
@@ -65,9 +68,10 @@ const MyChart = (props) => {
   };
   const options = {
     plugins: {
+     datalabels: false, 
      legend: {
-          display: false,
-        },
+        display: false,
+      },
     }
   };
   defaults.font.size = 16;
@@ -98,6 +102,9 @@ const MyChart = (props) => {
 const options2 = {
   indexAxis: 'y',
   plugins: {
+    datalabels: {
+      color: '#F0F6F6',
+    },
     legend: {
     display: false,
       // display: true,
@@ -178,10 +185,19 @@ const ratiosByMark = {
   5: countsByMark[5] / count * 100,
 };
 
+for (const mark in ratiosByMark) {
+  if (isNaN(ratiosByMark[mark])) {
+    ratiosByMark[mark] = 0;
+  }
+  if (ratiosByMark[mark] === 0) {
+    delete ratiosByMark[mark];
+  }
+}
+
 const datasets3 = [{
   label: ['5', '4', '3', '2', '1'],
   data: Object.values(ratiosByMark),
-  backgroundColor: myColors.reverse().slice(0, 5),
+  backgroundColor: myColors.slice(0, 5),
   borderColor: '#253237',
   borderWidth: 2,
   hoverBackgroundColor: '#BBE6E4',
@@ -194,22 +210,26 @@ const data3 = {
 const options3 = {
   plugins: {
     legend: {
-      display:false,
-      // display: true,
-      // position: 'bottom',
-      // labels: {
-      //   fontColor: 'black',
-      //   usePointStyle: true,
-      //   padding: 10, 
-      //   boxWidth: 10,
-      //   pointStyle: 'circle',
-      //   lineWidth: 0,
-        
-   //   }
+      display: false,
     },
-  }
+    tooltip: {
+      enabled: true,
+      callbacks: {
+        label: function(context) {
+          return context.label + ': ' + context.formattedValue + '%';
+        }
+      }
+    },
+    datalabels: {
+      color: '#F0F6F6',
+      formatter: function(value, context) {
+        return Math.round(value) + '%';
+      },
+    },
+  },
+  labels: ['5', '4', '3', '2', '1'],
 };
-
+const ratioKeys = Object.keys(ratiosByMark);
 
 
   return (
@@ -235,20 +255,29 @@ const options3 = {
             <div className="my-legend-2">
             {subjectAverages.map((item, index) => (
               <div className="legend-2-line" key={item.subject}>
-               <DotCont color={filteredColors[index % filteredColors.length]} />
+               <DotCont color={filteredColors[index % filteredColors.length]} size={15}/>
                <p>{item.subject}</p>
               </div>
             ))}
             </div>
           </div>
           <Line className="myChart" data={data} options={options} />
-             {/* <Pie ref={(ref) => setChartRef(ref)}  className="myChart3" data={data3} options={options3} /> */}
+         </div>
+         <div className="chart-flex-cont chart-flex-cont-pie" style={{flexDirection:"row-reverse", justifyContent:'center', paddingTop:'0'}}>
+          <div className="myChart-in-flex-box3">
+            <Pie className="myChart3"   plugins={[ChartDataLabels]} data={data3} options={options3}/>
           </div>
-          <div className="myChart-in-flex-box2">
-            
-            {/* <Pie className="myChart3" data={data3} options={options3}/> */}
-           </div>
-          
+          <div className="myChart-in-flex-box2 myChart-in-flex-box2-pie" style={{width:'30%'}}>
+            <div className="my-legend-3">
+            {ratioKeys.map((key, index) => (
+               <div className="legend-2-line" key={key}>
+                <DotCont color={myColors[index % myColors.length]} size={20}/>
+                {ratiosByMark[key] && <p>{key} - {ratiosByMark[key].toFixed(0)}% </p>}
+              </div>
+                ))}
+            </div>
+        </div>
+        </div>
       </div> 
       
         {alertMessage && (
