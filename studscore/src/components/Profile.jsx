@@ -3,7 +3,7 @@ import './style.scss';
 import ProfileForm from './ProfileForms/MainProfileForm';
 import ChangePasswordForm from './ProfileForms/ChangePasswordForm';
 
-const Profile = () => {
+const Profile = (props) => {
   
   return (
     <>
@@ -15,8 +15,8 @@ const Profile = () => {
                 <h2>Профіль</h2>
                 <hr/>
               </div>
-              <ProfileForm/>
-              <ChangePasswordForm/>
+              <ProfileForm user={props.user} setIsUpdatedUser={props.setIsUpdatedUser}/>
+              <ChangePasswordForm user={props.user}/>
             </div>
         </div>
       </div>

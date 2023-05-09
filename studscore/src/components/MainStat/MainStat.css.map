@@ -1,1 +1,1 @@
-{"version":3,"sources":["../variables.scss","MainStat.scss","MainStat.css"],"names":[],"mappings":"AAAQ,+IAAA;ACER;EACI,yBDGU;ECFV,gBAAA;EACA,qBAAA;ACAJ;ADCI;EAJJ;IAKM,sBAAA;ECEJ;AACF","file":"MainStat.css"}
+{"version":3,"sources":["../variables.scss","MainStat.scss","MainStat.css"],"names":[],"mappings":"AAAQ,+IAAA;ACER;EACI,yBDGU;ECFV,gBAAA;EACA,qBAAA;ACAJ;ADCI;EAJJ;IAKM,mCAAA;ECEJ;AACF","file":"MainStat.css"}

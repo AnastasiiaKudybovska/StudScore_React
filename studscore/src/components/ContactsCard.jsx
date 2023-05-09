@@ -3,12 +3,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone} from '@fortawesome/free-solid-svg-icons';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { BsFillEnvelopeFill } from 'react-icons/bs';
+import AxiosClient from './AxiosClient';
+import CustomAlert from './CustomAlert';
 
-function ContactsCard() {
+function ContactsCard(props) {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
   const [isContactsFormValid, setIsContactsFormValid] = useState(false);
+
+  const user = props.user ? props.user : null;
+
+  const [alertMessage, setAlertMessage] = useState('');
+  const [alertSuccess, setAlertSuccess] = useState(false);
+  const [alertKey, setAlertKey] = useState(0);
 
   useEffect(() => {
     if (subject === '' || message === '') {
@@ -28,10 +36,32 @@ function ContactsCard() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Додати логіку для надсилання форми
+    if (user && user.username){
+      AxiosClient.post(`/user/${props.user.username}/send_msg`, 
+      {
+        subject: subject,
+        text: message
+      })
+      .then((response) => {
+        if (response.status === 200){
+          // console.log(response.data)
+          setAlertMessage("Повідомлення успішно надіслане!");
+          setAlertSuccess(true);
+          setAlertKey(alertKey + 1);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        setAlertMessage(error.response.data.error.message);
+        setAlertSuccess(false);
+        setAlertKey(alertKey + 1);
+      });
+    }
+    setIsContactsFormValid(false);
   };
 
   return (
+    <>
     <div className="contacts-card">
       <div id="contact" className="contact-area section-padding">
         <div className="container">
@@ -64,7 +94,7 @@ function ContactsCard() {
                         rows="6"
                         name="message"
                         className="form-control"
-                        placeholder=""
+                        placeholder="Повідомлення"
                         required
                         value={message}
                         onChange={handleMessageChange}
@@ -110,6 +140,14 @@ function ContactsCard() {
         </div>
       </div>
     </div>
+
+     {alertMessage && (
+      <CustomAlert 
+        key={alertKey} 
+        message={alertMessage} 
+        success={alertSuccess} />
+    )} 
+    </>
   );
 }
 

@@ -128,10 +128,11 @@
   border-radius: $base-border-radius;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   text-align: center;
-  animation: fadeIn 3s;
+  animation: fadeIn 2s;
 }   
 @keyframes fadeIn {
   0% { opacity: 0; }
+  // 30% { opacity: 0; }
   100% { opacity: 1; }
 }
 
@@ -258,6 +259,7 @@ hr{
   .main-stat-rat-subcont{
     width: 95%;
     height: 32.5rem;
+    // min-width: 27rem;
     @extend .main-stat-subcont;
     padding: $base-padding 1.5rem;
     .rat-title-cont{
@@ -552,6 +554,9 @@ body{
     width: 100%;
     text-align: start;
     padding: 9rem 0 4rem 0;
+    @media screen and (max-width:650px){
+      padding: 11rem 0 4rem 0;
+    }
   .stat-chart-subcont{
     animation: fadeIn 3s;
     width: 65%;
@@ -572,12 +577,62 @@ body{
         flex-direction: column !important;
       }
     }
-    #myChart{
-      margin: 2rem 3rem;
+  
+    .myChart{
+      margin: 2rem 3rem 1rem 3rem;
       @media screen and (max-width:650px){
         margin: 1rem;
       }
+    }
+    // .myChart2{
+    //   width: 65% !important;
+    //   height: 80% !important;
+    //   margin: 1rem 0rem 1rem 1rem;
+    //   @media screen and (max-width:650px){
+    //     margin: 1rem;
+    //   }
+    // }
+    // .myChart3{
+    //   margin: 1.5rem 0rem 1rem 1rem;
+    //   width: 27% !important;
+    //   height: 27% !important;
+    //   @media screen and (max-width:650px){
+    //     margin: 1rem;
+    //   }
+    // }
+
+    .myChart-in-flex-box1{
+      width: 60%;
+      height: 250%;
+    }
+    .myChart-in-flex-box2{
+      width: 35%;
+      @include ordinary-text();
+      font-size: 1rem;
+      text-align: left;
+      .my-legend-2{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .legend-2-line{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          p{
+            padding-left: $base-padding;
+          }
+        }
+      }
       
+    }
+    .chart-flex-cont{
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      margin: 1rem;
+      padding-top: 1rem;
     }
     .stat-chart-mark{
       display: flex;
@@ -586,7 +641,6 @@ body{
       @media screen and (max-width:650px){
         align-self: center;
       }
-      
     }
     img{
       padding:3rem $base-padding;
@@ -820,7 +874,9 @@ body{
    text-shadow: 2px 1px 0 $secondary-color2;
    font-family: $logo-font;
 }
-
+.invalid{
+  background-color: $accent-color !important;
+}
 .profile-cont{
 background-color: $light-color;
 padding: 5rem 10rem;
@@ -842,7 +898,7 @@ font-size: 4rem;
 background-color: rgba(255, 255, 255, 0.9);
 border-radius: $base-border-radius;
 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-animation: fadeIn 3s;
+animation: fadeIn 1s;
 padding: 2rem !important;
 .h4-place{
   @include logo-text();
@@ -854,6 +910,7 @@ label{
   @include ordinary-text();
   font-size: 1.1rem;
   padding: 0.15rem $base-padding;
+  animation: fadeIn 0.5s ease-in;
 }
 
 
@@ -869,6 +926,7 @@ input {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s;
   color: $light-color;
+  animation: fadeIn 0.5s ease-in;
   &:focus {
     transition: 1s;
     outline: none;
@@ -885,11 +943,13 @@ input {
  &:invalid {
   background-color: $accent-color;
 }
+
 }
 .pass-input{
 &:invalid {
   background-color: $secondary-color;
 }
+
 }
 .btn {
 @extend .button;
@@ -904,7 +964,7 @@ box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 transition: box-shadow 0.3s;
 color: $light-color;
 border-radius: $base-border-radius;
-margin-top: 1rem;
+// margin-top: 1rem;
 transition: opacity 1s ease;
 &:before {
   content: "";
@@ -960,20 +1020,30 @@ transition: opacity 1s ease;
 }
 
 }
+}
+@keyframes fadeIn2 {
+  0% { opacity: 0; }
+  65% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
+.ch-pass {
+  animation: fadeIn2 1.6s ease-in !important;
 }
 .button-update{
 flex-direction: column;
 text-align: end;
 justify-content: flex-end;
 align-items: end;
+animation: fadeIn 0.5s ease-in;
 }
 #changePassBtn{
 margin-top: 0;
+animation: fadeIn2 1.6s ease-in !important;
 }
 }
 
-#error_changepass_text{
+.error_changeprofile_text{
 text-align: end;
 @include ordinary-text();
 font-size: 1.1rem;
@@ -983,6 +1053,20 @@ color: $accent-color;
   color: $dark-color;
 }
 }
+p{
+  margin-bottom: 0.3em;
+
+  &.show {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  &.hide {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+ 
+}
+
 .px-4 {
 padding-right: 1.5rem !important;
 padding-left: 1.5rem !important;
@@ -1060,7 +1144,7 @@ padding-left: 1.5rem !important;
    textarea {
     background-color: $secondary-color;
     padding: 1.3rem;
-    margin:1rem 0;
+    margin: 1rem 0;
     font-size: 1.1rem;
     border-radius: $base-border-radius;
     font-family: $font-stack;

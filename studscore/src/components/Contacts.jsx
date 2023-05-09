@@ -1,14 +1,14 @@
 import React from 'react';
 import ContactsCard from './ContactsCard';
 
-const Contacts = () => {
+const Contacts = (props) => {
   return (
     <div className="contacts-cont">
       <div className="my-5">
         <h2>Контакти</h2>
         <hr/>
       </div>
-      <ContactsCard/>
+      <ContactsCard user={props.user}/>
     </div>
   );
 };

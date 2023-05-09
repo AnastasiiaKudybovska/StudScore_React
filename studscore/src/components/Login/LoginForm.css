@@ -51,6 +51,24 @@
   align-items: center;
   width: 55vh;
 }
+@media screen and (max-width: 540px) {
+  .login-page .form-wrapper .login-form {
+    width: 40vh;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  .login-page .form-wrapper .login-form {
+    width: 30vh;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 270px) {
+  .login-page .form-wrapper .login-form {
+    width: 22vh;
+    justify-content: center;
+  }
+}
 .login-page .form-wrapper .input-wrapper {
   width: 100%;
   margin-bottom: 1.5rem;
@@ -80,11 +98,6 @@
 .login-page .form-wrapper .input-wrapper input::placeholder {
   color: #F0F6F6;
   font-family: "Lora", serif;
-}
-@media screen and (max-width: 560px) {
-  .login-page .form-wrapper .input-wrapper input {
-    width: 70%;
-  }
 }
 
 .login-logo {
@@ -126,10 +139,9 @@
   color: #F0F6F6;
   border-radius: 20px;
 }
-@media screen and (max-width: 540px) {
-  .login-btn {
-    width: 70%;
-  }
+
+.btn-disabled-fp::after {
+  background: #253237 !important;
 }
 
 .login-btn:before {
@@ -197,4 +209,191 @@
   .login-logo {
     padding: 20vh 0 12vh 0;
   }
+}
+body.react-confirm-alert-body-element {
+  overflow: hidden;
+}
+
+.react-confirm-alert-blur {
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+
+.custom-ui {
+  padding: 2.5rem 4rem;
+  background-color: rgba(240, 246, 246, 0.8039215686);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 20px;
+  font-family: "Lora", serif;
+  font-size: 1.1rem;
+  color: #253237;
+  font-weight: lighter;
+  width: 68vh;
+}
+.custom-ui .custom-ui-title {
+  color: #F0F6F6;
+  font-size: 7rem;
+  text-shadow: 3px 2px 0 #253237;
+  font-family: "Amatic SC", cursive;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 3px 2px 0 #e5f9f9;
+  color: #253237;
+}
+@media screen and (max-width: 300px) {
+  .custom-ui .custom-ui-title {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 610px) {
+  .custom-ui {
+    width: 45vh;
+  }
+}
+@media screen and (max-width: 400px) {
+  .custom-ui {
+    width: 35vh;
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .custom-ui {
+    width: 25vh;
+  }
+}
+
+.cust-ui-alert-conf label {
+  padding-top: 1rem;
+}
+.cust-ui-alert-conf input {
+  background-color: #5C6B73;
+  padding: 1.3rem;
+  font-size: 1.1rem;
+  width: 100%;
+  height: 6vh;
+  border-radius: 20px;
+  border: none;
+  font-family: "Lora", serif;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s;
+  color: #F0F6F6;
+  animation: fadeIn 0.5s ease-in;
+}
+.cust-ui-alert-conf input:focus {
+  transition: 1s;
+  outline: none;
+  background-color: #5C6B73;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #F0F6F6;
+}
+.cust-ui-alert-conf input:focus:valid {
+  background-color: #42BFDD;
+  color: #F0F6F6;
+}
+.cust-ui-alert-conf input::-moz-placeholder {
+  color: #F0F6F6;
+  font-family: "Lora", serif;
+}
+.cust-ui-alert-conf input::placeholder {
+  color: #F0F6F6;
+  font-family: "Lora", serif;
+}
+.cust-ui-alert-conf input:invalid {
+  background-color: #b7094c;
+}
+
+.react-confirm-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  opacity: 0;
+  animation: react-confirm-alert-fadeIn 0.5s 0.2s forwards;
+}
+
+.react-confirm-alert-body {
+  font-family: "Quicksand", sans-serif;
+  width: 400px;
+  padding: 30px 30px 20px 30px;
+  text-align: left;
+  background: #171717;
+  border-radius: 10px;
+  box-shadow: 0 20px 75px rgba(0, 0, 0, 0.13);
+  color: white;
+}
+
+.react-confirm-alert-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.react-confirm-alert-body > h1 {
+  margin-top: 0;
+  font-size: 170%;
+  font-weight: bold;
+}
+
+.react-confirm-alert-body > h3 {
+  margin: 0;
+  font-size: 90%;
+}
+
+.react-confirm-alert-button-group {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.react-confirm-alert-button-group > button {
+  outline: none;
+  border: none;
+  display: inline-block;
+  padding: 3px 18px;
+  color: #171717;
+  margin-right: 10px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 90%;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+}
+
+.react-confirm-alert-button-group > button:first-child {
+  background: #91aba5;
+}
+
+.react-confirm-alert-button-group > button:last-child {
+  background: #D2042D;
+}
+@keyframes react-confirm-alert-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.react-confirm-alert-button-group > button:active:enabled {
+  transform: scale(1.03);
+}
+
+.react-confirm-alert-button-group > button:hover {
+  background-color: #EAD6BB;
 }/*# sourceMappingURL=LoginForm.css.map */

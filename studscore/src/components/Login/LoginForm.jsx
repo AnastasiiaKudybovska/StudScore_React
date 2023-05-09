@@ -3,8 +3,9 @@ import {useNavigate} from 'react-router-dom';
 import AxiosClient from '../AxiosClient';
 import './LoginForm.scss';
 import CustomAlert from '../CustomAlert';
+import ForgotPasswordButton from './FogotPasswordForm';
 
-function LoginForm() {
+function LoginForm({setToken}) {
     const url = "/login";
 
     const [login, setLogin] = useState('');
@@ -16,7 +17,7 @@ function LoginForm() {
     const navigate = useNavigate();
 
     const goToMain = () => {
-      navigate('/statistics');
+      navigate('/StudScore/statistics');
       //window.location.assign('/statistics');
     }
 
@@ -26,10 +27,11 @@ function LoginForm() {
             username: login,
             password: password
         }).then((response) => {
-            
-            console.log(response);
+            //console.log(response);
             if (response.status === 200) {
                 // console.log('yes')
+                localStorage.setItem('token', response.data.token);
+                setToken(response.data.token);
                 goToMain();
             }
         })
@@ -52,8 +54,6 @@ function LoginForm() {
           }
         });      
     }
-
-
 
     return (
         <header>
@@ -94,12 +94,14 @@ function LoginForm() {
             <button type="submit" className="login-btn">
               Увійти
             </button>
-            <button 
+            <ForgotPasswordButton/>
+            {/* <button 
                 className="forgot-action forgot-password-btn" 
                 type="submit"
+                // onClick={handleResetPasswordClick}
                 >
               Забули пароль?
-            </button>
+            </button> */}
           </form>
         </div>
       </div>
@@ -108,7 +110,5 @@ function LoginForm() {
       )}
     </header>
     );
-
-
 }
 export default LoginForm;
