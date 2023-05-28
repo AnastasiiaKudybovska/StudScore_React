@@ -105,8 +105,9 @@ const MotivationBlock = ({ phrases, initialText }) => {
   }, [currentPhraseIndex, phrases.length]);
 
   return (
-    <div className='motivation-block-wrap'>
-      <div className={`motivation-block ${animate ? 'animate' : ''}`}>
+    <div className='motivation-block-wrap' data-testid="motivation-block">
+      <div className={`motivation-block`}>
+        {/* ${animate ? 'animate' : ''} */}
         {initialText}
         <div id="flip">
           <div>

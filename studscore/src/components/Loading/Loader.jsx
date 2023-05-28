@@ -82,18 +82,22 @@ const FaGemCust = styled.div`
 `
 
 const Loader = () => {
-    return (
-      <LoaderWrapper>
-        <LoaderCont>
-            <h2>Завантаження</h2>
-            <LoaderCircle/>
-            <FaGemCust>
-                <FaGem className="fa fa-gem load-fa-gem" style={{fontSize:"0.7em"}}/> 
-            </FaGemCust>
-            <IMGLoading src={image} alt="image" />
-        </LoaderCont>      
-      </LoaderWrapper>
-    );
-  };
-  
-  export default Loader;
+  return (
+    <LoaderWrapper>
+      <LoaderCont>
+        <h2>Завантаження</h2>
+        <LoaderCircle data-testid="loader-circle" />
+        <FaGemCust>
+          <FaGem
+            className="fa fa-gem load-fa-gem"
+            style={{ fontSize: "0.7em" }}
+            data-testid="rotating-gem"
+          />
+        </FaGemCust>
+        <IMGLoading src={image} alt="image" />
+      </LoaderCont>
+    </LoaderWrapper>
+  );
+};
+
+export default Loader;

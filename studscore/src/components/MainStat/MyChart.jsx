@@ -233,7 +233,7 @@ const ratioKeys = Object.keys(ratiosByMark);
 
 
   return (
-    <div className="stat-chart">
+    <div className="stat-chart" data-testid="my-chart" >
       <div className="stat-chart-subcont">
         <div className="rat-title-cont2">
           <h2 className="h2-place">Середній бал</h2>
@@ -249,23 +249,23 @@ const ratioKeys = Object.keys(ratiosByMark);
         <hr />
         <div className="chart-flex-cont">
           <div className="myChart-in-flex-box1">
-              <Bar className="myChart2" data={data2}  options={options2} />
+              <Bar className="myChart2" data={data2}  options={options2} data-testid="my-chart2"/>
           </div>
           <div className="myChart-in-flex-box2">
             <div className="my-legend-2">
             {subjectAverages.map((item, index) => (
               <div className="legend-2-line" key={item.subject}>
-               <DotCont color={filteredColors[index % filteredColors.length]} size={15}/>
+               <DotCont  data-testid="dot-cont" color={filteredColors[index % filteredColors.length]} size={15}/>
                <p>{item.subject}</p>
               </div>
             ))}
             </div>
           </div>
-          <Line className="myChart" data={data} options={options} />
+          <Line className="myChart" data={data} options={options} data-testid="my-chart1" />
          </div>
          <div className="chart-flex-cont chart-flex-cont-pie" style={{flexDirection:"row-reverse", justifyContent:'center', paddingTop:'0'}}>
           <div className="myChart-in-flex-box3">
-            <Pie className="myChart3"   plugins={[ChartDataLabels]} data={data3} options={options3}/>
+            <Pie className="myChart3"   plugins={[ChartDataLabels]} data={data3} options={options3} data-testid="my-chart3"/>
           </div>
           <div className="myChart-in-flex-box2 myChart-in-flex-box2-pie" style={{width:'30%'}}>
             <div className="my-legend-3">

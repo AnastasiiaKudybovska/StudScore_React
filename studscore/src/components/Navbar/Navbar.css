@@ -116,7 +116,7 @@
   width: 100%;
 }
 
-.main-stat-subcont, .stat-chart .stat-chart-subcont, .stat-chart .chart-main-flex-cont .stat-chart-subcont, .main-stat-wrap .main-stat-rat-subcont {
+.main-stat-subcont, .stat-chart .stat-chart-subcont, .main-stat-wrap .main-stat-rat-subcont {
   width: 85%;
   padding: 0.75rem;
   margin: 0.75rem;
@@ -577,44 +577,6 @@ body {
     padding: 11rem 0 4rem 0;
   }
 }
-.stat-chart .chart-main-flex-cont {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.stat-chart .chart-main-flex-cont .stat-chart-subcont {
-  animation: fadeIn 3s;
-  width: 65%;
-}
-@media screen and (max-width: 650px) {
-  .stat-chart .chart-main-flex-cont .stat-chart-subcont {
-    width: 70%;
-  }
-}
-@media screen and (max-width: 400px) {
-  .stat-chart .chart-main-flex-cont .stat-chart-subcont {
-    width: 90%;
-  }
-}
-.stat-chart .chart-main-flex-cont .stat-chart-subcont .myChart {
-  margin: 2rem 3rem 1rem 3rem;
-}
-@media screen and (max-width: 650px) {
-  .stat-chart .chart-main-flex-cont .stat-chart-subcont .myChart {
-    margin: 1rem;
-  }
-}
-.stat-chart .chart-main-flex-cont .stat-chart-subcont .stat-chart-mark {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-@media screen and (max-width: 650px) {
-  .stat-chart .chart-main-flex-cont .stat-chart-subcont .stat-chart-mark {
-    align-self: center;
-  }
-}
 .stat-chart .stat-chart-subcont {
   animation: fadeIn 3s;
   width: 65%;
@@ -647,6 +609,110 @@ body {
 @media screen and (max-width: 650px) {
   .stat-chart .stat-chart-subcont .myChart {
     margin: 1rem;
+  }
+}
+.stat-chart .stat-chart-subcont .myChart-in-flex-box1 {
+  width: 60%;
+  height: 250%;
+}
+@media screen and (max-width: 997px) {
+  .stat-chart .stat-chart-subcont .myChart-in-flex-box1 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 730px) {
+  .stat-chart .stat-chart-subcont .myChart-in-flex-box2-pie {
+    width: 50% !important;
+    padding-top: 1rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .stat-chart .stat-chart-subcont .myChart-in-flex-box2-pie {
+    width: 100% !important;
+  }
+}
+.stat-chart .stat-chart-subcont .myChart-in-flex-box2 {
+  width: 35%;
+  font-family: "Lora", serif;
+  font-size: 1.3rem;
+  color: #253237;
+  font-weight: lighter;
+  font-size: 1.1rem;
+  text-align: left;
+}
+@media screen and (max-width: 997px) {
+  .stat-chart .stat-chart-subcont .myChart-in-flex-box2 {
+    width: 100%;
+    padding-left: 1rem;
+  }
+}
+@media screen and (max-width: 470px) {
+  .stat-chart .stat-chart-subcont .myChart-in-flex-box2 {
+    font-size: 0.95rem;
+  }
+}
+.stat-chart .stat-chart-subcont .myChart-in-flex-box2 .my-legend-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.stat-chart .stat-chart-subcont .myChart-in-flex-box2 .my-legend-2 .legend-2-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.stat-chart .stat-chart-subcont .myChart-in-flex-box2 .my-legend-2 .legend-2-line p {
+  padding-left: 0.75rem;
+}
+.stat-chart .stat-chart-subcont .myChart-in-flex-box2 .my-legend-3 {
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media screen and (max-width: 400px) {
+  .stat-chart .stat-chart-subcont .myChart-in-flex-box2 .my-legend-3 {
+    font-size: 0.95rem;
+  }
+}
+.stat-chart .stat-chart-subcont .myChart-in-flex-box2 .my-legend-3 .legend-2-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.stat-chart .stat-chart-subcont .myChart-in-flex-box2 .my-legend-3 .legend-2-line p {
+  padding-left: 0.75rem;
+}
+.stat-chart .stat-chart-subcont .myChart-in-flex-box3 {
+  width: 30%;
+}
+@media screen and (max-width: 870px) {
+  .stat-chart .stat-chart-subcont .myChart-in-flex-box3 {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .stat-chart .stat-chart-subcont .myChart-in-flex-box3 {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 730px) {
+  .stat-chart .stat-chart-subcont .chart-flex-cont-pie {
+    flex-direction: column !important;
+  }
+}
+.stat-chart .stat-chart-subcont .chart-flex-cont {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  padding-top: 1rem;
+}
+@media screen and (max-width: 997px) {
+  .stat-chart .stat-chart-subcont .chart-flex-cont {
+    flex-direction: column;
   }
 }
 .stat-chart .stat-chart-subcont .stat-chart-mark {

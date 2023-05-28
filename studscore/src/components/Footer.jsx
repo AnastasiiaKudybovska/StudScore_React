@@ -10,7 +10,7 @@ const Footer = () => {
     const [year, setYear] = useState(new Date().getFullYear());
   return (
     <> 
-    <footer className="site-footer">
+    <footer className="site-footer" data-testid="footer-testid">
         <div className="container">
             <div className="row">
                 <div className="col-sm-12 col-md-6">
@@ -58,7 +58,7 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-sm-6 col-xs-12">
-              <p>Copyright &copy; 2023 All Rights Reserved by 
+              <p>Copyright &copy; {year} All Rights Reserved by 
            <a className="copyright-text"href="#">StudScore</a>.
               </p>
             </div>

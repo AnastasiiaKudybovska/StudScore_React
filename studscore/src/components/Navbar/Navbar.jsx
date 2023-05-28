@@ -58,10 +58,10 @@ const Navbar = (props) => {
         getUserInfo();
         getUserRatingMark();
 
-        if(props.isUpdatedUser){
-          getUserInfo();
-          getUserRatingMark();
-        }
+        // if(props.isUpdatedUser){
+        //   getUserInfo();
+        //   getUserRatingMark();
+        // }
       }, [user, props.isUpdatedUser]);
       
     function handleLogout() {
@@ -69,9 +69,9 @@ const Navbar = (props) => {
       }
       
   return (
-    <div className="navbarWrapper">
-        <input className="side-menu" type="checkbox" id="side-menu" checked={menuOpen} onChange={handleMenuToggle} />
-        <label className="hamb" htmlFor="side-menu">
+    <div className="navbarWrapper" data-testid="navbar-testid">
+        <input className="side-menu" type="checkbox" id="side-menu" data-testid="side-menu"  checked={menuOpen} onChange={handleMenuToggle} />
+        <label className="hamb" htmlFor="side-menu" data-testid="menu-icon">
             <span className="hamb-line"></span>
         </label>
         <div className="logo-cont logo">

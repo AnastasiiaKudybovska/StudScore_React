@@ -61,9 +61,9 @@ const CustomAlert = ({ message, success }) => {
   return (
     <>
       {visible && (
-        <AlertWrapper success={success}>
+        <AlertWrapper success={success} data-testid="custom-alert">
           {message}
-          <TimerWrapper width={timerWidth} />
+          <TimerWrapper width={timerWidth} data-testid="timer-wrapper"/>
         </AlertWrapper>
       )}
     </>

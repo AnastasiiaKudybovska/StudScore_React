@@ -62,7 +62,7 @@ function ContactsCard(props) {
 
   return (
     <>
-    <div className="contacts-card">
+    <div className="contacts-card" data-testid="contacts-card">
       <div id="contact" className="contact-area section-padding">
         <div className="container">
           <div className="section-title">
@@ -108,6 +108,7 @@ function ContactsCard(props) {
                         id="submitButton"
                         className="btn btn-contact-bg"
                         disabled={!isContactsFormValid}
+                        data-testid="submit-button"
                       >
                         Надіслати
                       </button>
@@ -142,10 +143,12 @@ function ContactsCard(props) {
     </div>
 
      {alertMessage && (
-      <CustomAlert 
-        key={alertKey} 
-        message={alertMessage} 
-        success={alertSuccess} />
+      <CustomAlert
+      data-testid="success-message"
+      key={alertKey}
+      message={alertMessage}
+      success={alertSuccess}
+    />
     )} 
     </>
   );
