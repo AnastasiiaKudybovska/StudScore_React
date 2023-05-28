@@ -101,7 +101,7 @@ const LeaderboardTable = (props) => {
           <hr />
           <div className="stud-rat rating active" id="group-rating">
             <ol>
-              {leaderboardData.map((item) => (
+            {leaderboardData && user && leaderboardData.map((item) =>  (
                 <div className="self-stud-rat" key={item.student.user.id_user}>
                   <li className={item.student.user.id_user === user.id ? "fw-bold" : ""}>
                     {item.student.user.last_name} {item.student.user.first_name}

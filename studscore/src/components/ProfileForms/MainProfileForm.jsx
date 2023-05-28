@@ -171,7 +171,7 @@ const ProfileForm = (props) => {
       const handleEmailChange = (event) => {
         const emailValue = event.target.value;
         setEmail(emailValue);
-        if (!isValidEmail(emailValue) || emailValue == ''){
+        if (!isValidEmail(emailValue) && emailValue !== ''){
           setEmailError("Некоректна електронна пошта.");
           setIsValid(3, false);
         }
@@ -248,7 +248,7 @@ const ProfileForm = (props) => {
     
   return (
     <>
-        <form onSubmit={handleSubmit} className="file-upload"  ref={formRef} >
+        <form onSubmit={handleSubmit} className="file-upload"  ref={formRef} data-testid="profile-form" data-user={JSON.stringify(props.user)}>
       <div className="row mb-5 gx-5">
         <div className="col-xxl-9 mb-5 mb-xxl-0">
           <div className="bg-secondary-soft px-4 py-5">
@@ -315,6 +315,7 @@ const ProfileForm = (props) => {
                   type="email"
                   className="form-control"
                   id="inputEmail4"
+                  aria-label="inputEmail4" 
                   value={email}
                   placeholder="support@studscore.com"
                   pattern="(.)+@[A-Za-z0-9]([A-Za-z0-9.\-]*[A-Za-z0-9])?\.[A-Za-z]{1,13}$"
@@ -369,7 +370,7 @@ const ProfileForm = (props) => {
                 />
               </div>
               <div className="button-update  d-md-flex justify-content-md-end text-center" style={{marginTop:"0.3rem"}}>
-              <div className="error_changeprofile_text">
+              <div className="error_changeprofile_text" data-testid="is-valid-1">
                 <p className={myErrors ? 'show' : 'hide'}>
                   {myErrors ? myErrors : "\u00A0"}
                 </p>

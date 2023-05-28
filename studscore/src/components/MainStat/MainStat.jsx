@@ -32,40 +32,44 @@ const MainStat = (props) => {
     async function getGroupId() {
       setLoading(0, true);
       if (user && user.id) {
-       return AxiosClient.get(`/students/${user.id}/groups`)
+        setLoading(0, true);
+        return AxiosClient.get(`/students/${user.id}/groups`)
           .then((response) => {
             if (response.status === 200) {
               setGroupId(response.data);
-              setLoading(0, false);
             }
           })
           .catch((error) => {
-            console.log(error);
-            setAlertMessage(error.response.data.error.message);
-            setAlertSuccess(false);
-            setAlertKey(alertKey + 1);
-            setLoading(0, false);
+            // console.log(error);
+            // setAlertMessage(error.response.data.error.message);
+            // setAlertSuccess(false);
+            // setAlertKey(alertKey + 1);
           })
-      }
+          .finally(() => {
+            setLoading(0, false);
+          });
+      }      
     }   
     getGroupId();
     async function getPlaceInSteam() {
       setLoading(1, true);
       if (user && user.id) {
-       return AxiosClient.get(`/students/${user.id}/rating/place`)
+        setLoading(1, true);
+        return AxiosClient.get(`/students/${user.id}/rating/place`)
           .then((response) => {
             if (response.status === 200) {
-              setPlaceInStream(response.data + 1)
-              setLoading(0, false);
+              setPlaceInStream(response.data + 1);
             }
           })
           .catch((error) => {
-            console.log(error);
-            setAlertMessage(error.response.data.error.message);
-            setAlertSuccess(false);
-            setAlertKey(alertKey + 1);
-            setLoading(0, false);
+            // console.log(error);
+            // setAlertMessage(error.response.data.error.message);
+            // setAlertSuccess(false);
+            // setAlertKey(alertKey + 1);
           })
+          .finally(() => {
+            setLoading(1, false);
+          });
       }
     }   
     getGroupId();
@@ -77,22 +81,24 @@ const MainStat = (props) => {
   useEffect(() => {
     async function getPlaceInGroup() {
       setLoading(3, true);
-      if (user && user.id && group_id != '') {
+      if (user && user.id && group_id !== '') {
+        setLoading(3, true);
         return AxiosClient.get(`/students/${user.id}/groups/${group_id}/rating/place`)
-        .then((response) => {
-          if (response.status === 200) {
-            setPlaceInGroup(response.data + 1); 
+          .then((response) => {
+            if (response.status === 200) {
+              setPlaceInGroup(response.data + 1);
+            }
+          })
+          .catch((error) => {
+            // console.log(error);
+            // setAlertMessage(error.response.data.error.message);
+            // setAlertSuccess(false);
+            // setAlertKey(alertKey + 1);
+          })
+          .finally(() => {
             setLoading(3, false);
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-          setAlertMessage(error.response.data.error.message);
-          setAlertSuccess(false);
-          setAlertKey(alertKey + 1);
-          setLoading(3, false);
-        })
-    }
+          });
+      }
   }
     getPlaceInGroup();    
   }, [group_id]);
@@ -100,29 +106,31 @@ const MainStat = (props) => {
   useEffect(() => {
     async function getGroupRating() {    
       setLoading(4, true);
-      if (group_id != '' && user && user.id) {
+      if (group_id !== '' && user && user.id) {
+        setLoading(4, true);
         return AxiosClient.get(`/students/groups/${group_id}/rating`)
-        .then((response) => {
-          if (response.status === 200) {
-            setLeaderboarGroupdData(response.data);
-            response.data.forEach((item) => {
-              if (item.student.user.id_user === user.id) {
-                props.setMyRatMark(item.rating_mark);
-                props.setMyAverageMark(item.average_mark);
-              }
-              setLoading(4, false);
-            });
-                //  console.log(response.data) 
+          .then((response) => {
+            if (response.status === 200) {
+              setLeaderboarGroupdData(response.data);
+              response.data.forEach((item) => {
+                if (item.student.user.id_user === user.id) {
+                  props.setMyRatMark(item.rating_mark);
+                  props.setMyAverageMark(item.average_mark);
+                }
+              });
             }
           })
           .catch((error) => {
-            console.log(error);
-            setAlertMessage(error.response.data.error.message);
-            setAlertSuccess(false);
-            setAlertKey(alertKey + 1);
-            setLoading(4, false);
+            // console.log(error);
+            // setAlertMessage(error.response.data.error.message);
+            // setAlertSuccess(false);
+            // setAlertKey(alertKey + 1);
           })
-        }
+          .finally(() => {
+            setLoading(4, false);
+          });
+      }
+      
       }
         getGroupRating();
         // console.log(loadingArray)
@@ -144,7 +152,7 @@ const MainStat = (props) => {
     };
   }, [loadingArray]);
   return (
-    <div className="mainStatWrapper">
+    <div className="mainStatWrapper" data-testid="main-stat">
       {!isLoading ? (
         <div className="main-stat-wrap">
             <div className="main-stat-place-cont">

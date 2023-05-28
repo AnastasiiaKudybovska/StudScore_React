@@ -33,8 +33,8 @@ const LoaderWrapper = styled.div`
 `
 const LoadingSpinner = () => {
     return (
-        <LoaderWrapper>
-            <LoaderCircle/> 
+        <LoaderWrapper  data-testid="loading-spinner" >
+            <LoaderCircle data-testid="loader-circle"/> 
         </LoaderWrapper> 
     );
   };

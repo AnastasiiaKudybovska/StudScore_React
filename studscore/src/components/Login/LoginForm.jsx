@@ -56,15 +56,16 @@ function LoginForm({setToken}) {
     }
 
     return (
+      
         <header>
-      <div className="login-page">
+      <div className="login-page" >
         <div className="login-background"></div>
         <div className="login-logo">
           <h1 className="logo-text">StudScore</h1>
         </div>
 
         <div className="form-wrapper">
-          <form className="login-form" onSubmit={handleSubmit}>
+          <form className="login-form" onSubmit={handleSubmit} data-testid="login-testid">
             <div className="input-wrapper">
               <input
                 type="text"

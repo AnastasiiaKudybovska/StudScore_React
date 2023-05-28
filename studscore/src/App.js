@@ -8,29 +8,14 @@ import Profile from './components/Profile';
 import Contacts from './components/Contacts';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
+import { parseJwt } from './components/jwtUtils';
 
 function authenticated() {
   const token = localStorage.getItem('token');
   return token;
 }
-
-function parseJwt(token) {
-  var base64Url = token.split('.')[1];
-  if (!base64Url) return;
-
-  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  var jsonPayload = decodeURIComponent(
-    window.atob(base64)
-      .split('')
-      .map(function (c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      })
-      .join('')
-  );
-  return JSON.parse(jsonPayload);
-}
-
 function App() {
+
   //const token = getToken();
   const [token, setToken] = useState(localStorage.getItem('token'));
   const location = useLocation(); 
@@ -44,7 +29,7 @@ function App() {
     const token = authenticated();
     if (token) {
       const parsedToken = parseJwt(token);
-      if (parsedToken.exp < Date.now() / 1000) {
+      if (parsedToken && parsedToken.exp < Date.now() / 1000) {
         localStorage.removeItem('token');
         setIsAuthenticated(false);
       } else {
@@ -56,7 +41,7 @@ function App() {
     } else {
       setIsAuthenticated(false);
     }
-  }, [token]);
+  }, [token]);  
   
 
   // if (!isAuthenticated) {
@@ -64,10 +49,12 @@ function App() {
   // }
 
   return (
+
     <div className="App">
       {(pathname === '/StudScore/statistics' || pathname === '/StudScore/profile' || pathname ==='/StudScore/contacts') ? 
         <Navbar user={user} isUpdatedUser={isUpdatedUser}/> : null}
         <Routes>
+          <Route path="/" element={<LoginForm setToken={setToken} />} />
           <Route path="StudScore/" element={<LoginForm setToken={setToken} />} />
           <Route path="StudScore/statistics" element={<Statistics user={user}/>} />
           <Route path="StudScore/profile" element={<Profile user={user} setIsUpdatedUser={setIsUpdatedUser}/>} />

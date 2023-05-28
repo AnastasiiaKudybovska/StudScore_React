@@ -39,7 +39,7 @@ function ChangePasswordForm(props) {
           if (error.response.status === 401) {
             console.log('Помилка: недостатньо прав для зміни пароля');
             setAlertMessage("Старий пароль введено неправильно!");
-            setErrorMessage("Старий пароль введено неправильно!");
+            setErrorMessage("Старий пароль введено неправильно.");
             setAlertSuccess(false);
             setAlertKey(alertKey + 1);
           }
@@ -104,7 +104,7 @@ function ChangePasswordForm(props) {
 
   return (
     <>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} data-testid="change-password-form" data-user={JSON.stringify(props.user)}>
       <div className="row mb-5 gx-5">
         <div className="col-xxl-9 mb-5 mb-xxl-0">
           <div className="bg-secondary-soft px-4 py-5 ">

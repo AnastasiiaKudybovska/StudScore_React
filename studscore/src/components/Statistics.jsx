@@ -12,9 +12,11 @@ const Statistics = (props) => {
   return (
     <>
     <MainStat user={props.user} setMyRatMark={setMyRatMark} setMyAverageMark={setMyAverageMark}/>
-    <MotivationBlock initialText="Always be" phrases={["creative", "learning", 'coding']} />
+    <MotivationBlock initialText="Always be" phrases={["creative", "learning", 'coding']}/>
     {/* <MotivationBlock initialText="Always be" phrases={["motivated", "productive", "creative", "learning", 'coding']} /> */}
-    <MyChart myRatMark={myRatMark} myAverageMark={myAverageMark} user={props.user}/>
+    <MyChart myRatMark={myRatMark} myAverageMark={myAverageMark} user={props.user}
+    
+    />
     
     </>
   );
