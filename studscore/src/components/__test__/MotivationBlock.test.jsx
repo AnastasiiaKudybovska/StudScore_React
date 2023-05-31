@@ -22,15 +22,18 @@ describe('MotivationBlock', () => {
     act(() => {
       jest.advanceTimersByTime(2000);
     });
+   
     expect(getByText(phrases[1])).toBeInTheDocument();
     act(() => {
       jest.advanceTimersByTime(2000);
     });
+    
     expect(getByText(phrases[2])).toBeInTheDocument();
 
     act(() => {
       jest.advanceTimersByTime(2000);
     });
+   
     expect(getByText(phrases[0])).toBeInTheDocument();
 
     jest.useRealTimers();

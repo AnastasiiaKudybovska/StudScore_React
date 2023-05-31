@@ -20,11 +20,8 @@ describe('MainStatCont', () => {
   test('Given the title "Місце на потоці", should apply additional class "wr2"', () => {
     const title = 'Місце на потоці';
     const data = 'Test Data';
-
     const { container } = render(<MainStatCont title={title} data={data} />);
-
     const placeWrapElement = container.querySelector('.place-wrap');
-
     expect(placeWrapElement).toHaveClass('wr2');
   });
 });

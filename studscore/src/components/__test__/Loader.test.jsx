@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Loader from '../Loading/Loader';
 
-
 describe('Loader', () => {
   test('Should renders the loader component', () => {
     render(<Loader />);

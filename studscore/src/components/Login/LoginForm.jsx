@@ -106,6 +106,7 @@ function LoginForm({setToken}) {
           </form>
         </div>
       </div>
+      {/* <ButtonSocket/> */}
       {alertMessage && (
         <CustomAlert key={alertKey} message={alertMessage} success={alertSuccess} />
       )}

@@ -114,6 +114,7 @@ describe('ChangePasswordForm', () => {
         }
       }
     });
+    
 
     const { getByLabelText, getByText, getByTestId } = render(<ChangePasswordForm user={user} />);
     const oldPasswordInput = getByLabelText('Старий пароль');

@@ -1167,7 +1167,7 @@ p.hide {
     font-size: 3rem;
   }
 }
-.contacts-cont .contacts-card {
+.contacts-cont .contacts-card, .contacts-cont .contacts-card .contacts-card2 {
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
@@ -1181,10 +1181,13 @@ p.hide {
   text-justify: inter-word;
 }
 @media screen and (max-width: 530px) {
-  .contacts-cont .contacts-card {
+  .contacts-cont .contacts-card, .contacts-cont .contacts-card .contacts-card2 {
     font-size: 1rem;
     padding: 0.75rem;
   }
+}
+.contacts-cont .contacts-card .contacts-card2 {
+  padding-top: 1rem;
 }
 .contacts-cont .contacts-card .contact-area {
   background-attachment: fixed;
@@ -1196,7 +1199,7 @@ p.hide {
     margin-bottom: 60px;
   }
 }
-.contacts-cont .contacts-card input {
+.contacts-cont .contacts-card input, .contacts-cont .contacts-card .contacts-card2 input {
   margin: 1rem 0;
   background-color: #5C6B73;
   padding: 1.3rem;
@@ -1219,15 +1222,15 @@ p.hide {
 .contacts-cont .contacts-card input:focus:valid {
   background-color: #42BFDD;
 }
-.contacts-cont .contacts-card input::-moz-placeholder {
+.contacts-cont .contacts-card input::-moz-placeholder, .contacts-cont .contacts-card .contacts-card2 input::-moz-placeholder {
   color: #F0F6F6;
   font-family: "Lora", serif;
 }
-.contacts-cont .contacts-card input::placeholder {
+.contacts-cont .contacts-card input::placeholder, .contacts-cont .contacts-card .contacts-card2 input::placeholder {
   color: #F0F6F6;
   font-family: "Lora", serif;
 }
-.contacts-cont .contacts-card textarea {
+.contacts-cont .contacts-card textarea, .contacts-cont .contacts-card .contacts-card2 textarea {
   background-color: #5C6B73;
   padding: 1.3rem;
   margin: 1rem 0;
@@ -1248,11 +1251,11 @@ p.hide {
 .contacts-cont .contacts-card textarea:focus:valid {
   background-color: #42BFDD;
 }
-.contacts-cont .contacts-card textarea::-moz-placeholder {
+.contacts-cont .contacts-card textarea::-moz-placeholder, .contacts-cont .contacts-card .contacts-card2 textarea::-moz-placeholder {
   color: #F0F6F6;
   font-family: "Lora", serif;
 }
-.contacts-cont .contacts-card textarea::placeholder {
+.contacts-cont .contacts-card textarea::placeholder, .contacts-cont .contacts-card .contacts-card2 textarea::placeholder {
   color: #F0F6F6;
   font-family: "Lora", serif;
 }

@@ -13,5 +13,4 @@ describe('Statistics component', () => {
       expect(screen.getByTestId('main-stat')).toBeInTheDocument();
       expect(screen.getByTestId('motivation-block')).toBeInTheDocument();
     });
-  
   });

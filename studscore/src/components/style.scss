@@ -1010,6 +1010,7 @@ input {
 }
 
 }
+
 .btn {
 @extend .button;
 padding: 0.6em 2em;
@@ -1147,6 +1148,41 @@ padding-left: 1.5rem !important;
       font-size: 3rem;
     }
   }
+  .contacts-card2{
+      margin-top: 4rem ;
+      .donation-cont{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        justify-content: space-evenly;
+        @media screen and (max-width: 770px){
+          flex-direction: column;
+        }
+     
+      .donation-info{
+        padding: 1rem 0;
+      }
+        .donation-img{
+
+          width: auto;
+          height: 25vh;
+          @media screen and (max-width: 400px){
+            height: 20vh;
+          }
+    
+        }
+      }
+      
+      .donation-butt{
+        margin: 1rem 0;
+        width: 50%;
+        @media screen and (max-width: 400px){
+          width: 100%;
+        }
+      }
+   }
+
   .contacts-card{
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.9);
@@ -1161,6 +1197,7 @@ padding-left: 1.5rem !important;
       padding: $base-padding;
      }
 
+     
     .contact-area {
       background-attachment: fixed;
       background-size: cover;
