@@ -174,7 +174,6 @@ describe('Navbar component', () => {
         jest.clearAllMocks();
       });
 
-
       test('Should call localStorage.clear(), when logout link is clicked', async () => {
         render(
           <BrowserRouter>

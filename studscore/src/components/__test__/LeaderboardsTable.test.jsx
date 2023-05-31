@@ -69,6 +69,7 @@ describe('LeaderboardTable', () => {
     id: 1,
     username: 'artem_honcharenko',
   };
+  
   test('Given leaderboard data, should render data correctly', async () => {
     AxiosClient.get.mockResolvedValue({ status: 200, data: mockData }); 
     const { getByText } = render(<LeaderboardTable group_id={1} 

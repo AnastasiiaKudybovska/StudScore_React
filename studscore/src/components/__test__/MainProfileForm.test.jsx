@@ -370,5 +370,4 @@ describe('ProfileForm', () => {
           expect(screen.getByLabelText('Phone number')).toHaveValue(updatedUserData.phone);
         });
       });
-
 });

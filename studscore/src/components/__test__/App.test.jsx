@@ -6,6 +6,7 @@ import App from '../../App';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { parseJwt } from '../jwtUtils';
 
+
 describe('App', () => {
   test('Should render the login form', async () => {
     render(

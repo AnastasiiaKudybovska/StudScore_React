@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { render, screen, act, waitFor} from '@testing-library/react';
 import MyChart from '../MainStat/MyChart';
@@ -71,7 +72,6 @@ describe('MyChart', () => {
     render(<MyChart user={mockUser} myRatMark={90.875} myAverageMark={5.0} />);
 
     await screen.findByTestId('my-chart');
-
     expect(screen.getByText(/Середній бал/i)).toBeInTheDocument();
     expect(screen.getByText(/90.875/)).toBeInTheDocument();
   });

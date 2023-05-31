@@ -43,7 +43,7 @@ describe('ContactsCard', () => {
     const mockUser = {
       username: 'testUser',
     };
-
+  
     const mockResponse = {
       status: 200,
       data: {},

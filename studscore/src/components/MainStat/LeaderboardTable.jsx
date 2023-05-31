@@ -115,7 +115,7 @@ const LeaderboardTable = (props) => {
                       <p>{item.average_mark !== 0 ? item.average_mark : "0.0"}</p>
                       <FaGem className="fa fa-gem" />
                     </div>
-                    <div className={
+                    <div className={ 
                         item.student.user.id_user === user.id
                           ? "rating_mark_in_r  rating-mark-block2"
                           : "rating_mark_in_r  rating-mark-block0"

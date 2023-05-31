@@ -23,7 +23,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({});
   const [isUpdatedUser, setIsUpdatedUser] = useState(false); 
-  
+
 
   useEffect(() => {
     const token = authenticated();

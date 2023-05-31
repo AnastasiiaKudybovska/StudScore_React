@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactsCard from './ContactsCard';
+import { ButtonSocket } from './ButtonSocket';
 
 const Contacts = (props) => {
   return (
@@ -9,6 +10,7 @@ const Contacts = (props) => {
         <hr/>
       </div>
       <ContactsCard user={props.user}/>
+      <ButtonSocket/>
     </div>
   );
 };

@@ -1166,6 +1166,42 @@ p.hide {
     font-size: 3rem;
   }
 }
+.contacts-cont .contacts-card2 {
+  margin-top: 4rem;
+}
+.contacts-cont .contacts-card2 .donation-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 770px) {
+  .contacts-cont .contacts-card2 .donation-cont {
+    flex-direction: column;
+  }
+}
+.contacts-cont .contacts-card2 .donation-cont .donation-info {
+  padding: 1rem 0;
+}
+.contacts-cont .contacts-card2 .donation-cont .donation-img {
+  width: auto;
+  height: 25vh;
+}
+@media screen and (max-width: 400px) {
+  .contacts-cont .contacts-card2 .donation-cont .donation-img {
+    height: 20vh;
+  }
+}
+.contacts-cont .contacts-card2 .donation-butt {
+  margin: 1rem 0;
+  width: 50%;
+}
+@media screen and (max-width: 400px) {
+  .contacts-cont .contacts-card2 .donation-butt {
+    width: 100%;
+  }
+}
 .contacts-cont .contacts-card {
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.9);

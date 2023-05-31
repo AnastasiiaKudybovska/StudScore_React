@@ -15,4 +15,5 @@ describe('Contacts', () => {
     const contactsCardElement = screen.getByTestId('contacts-card');
     expect(contactsCardElement).toBeInTheDocument();
   });
+  
 });
